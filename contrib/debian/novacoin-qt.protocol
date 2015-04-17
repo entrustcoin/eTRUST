@@ -1,0 +1,11 @@
+[Protocol]
+exec=entrustcoin-qt '%u'
+protocol=entrustcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

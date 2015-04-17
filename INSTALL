@@ -1,0 +1,9 @@
+Building Entrustcoin
+
+See doc/readme-qt.rst for instructions on building Entrustcoin QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Entrustcoin.
+
+See doc/build-*.txt for instructions on building entrustcoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Entrustcoin.

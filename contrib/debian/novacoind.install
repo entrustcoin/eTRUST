@@ -1,0 +1,2 @@
+debian/bin/entrustcoind usr/bin
+src/entrustcoind usr/lib/entrustcoin

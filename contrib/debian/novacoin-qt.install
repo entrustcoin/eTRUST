@@ -1,0 +1,5 @@
+entrustcoin-qt usr/bin
+share/pixmaps/bitcoin32.xpm usr/share/pixmaps
+share/pixmaps/bitcoin80.xpm usr/share/pixmaps
+debian/entrustcoin-qt.desktop usr/share/applications
+debian/entrustcoin-qt.protocol usr/share/kde4/services/
