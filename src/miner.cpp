@@ -121,7 +121,7 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
     txNew.vin.resize(1);
     txNew.vin[0].prevout.SetNull();
     CBitcoinAddress address(!fTestNet ? FOUNDATION : FOUNDATION_TEST);
-    txNew.vout.resize(2);
+    txNew.vout.resize(1);
      
     int nHeight = pindexPrev->nHeight+1; // height of new block
 
@@ -139,7 +139,7 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
     else
     {
         // Height first in coinbase required for block.version=2
-        txNew.vin[0].scriptSig = (CScript() << pindexPrev->nHeight+1) + COINBASE_FLAGS;
+        txNew.vin[0].scriptSig = (CScript() << nHeight) + COINBASE_FLAGS;
         assert(txNew.vin[0].scriptSig.size() <= 100);
 
         txNew.vout[0].SetEmpty();
@@ -364,10 +364,6 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
 
         if (fDebug && GetBoolArg("-printpriority"))
             printf("CreateNewBlock(): total size %"PRIu64"\n", nBlockSize);
-
-        //if (fProofOfStake)
-        //    pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(nHeight, nFees)- devCoin;
-        //    pblock->vtx[0].vout[1].nValue = devCoin;
 
         if (!fProofOfStake)
             pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(nHeight, nFees)- devCoin;
