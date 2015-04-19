@@ -138,16 +138,12 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
     }
     else
     {
-        CReserveKey reservekey(pwallet);
-        CPubKey pubkey;
         // Height first in coinbase required for block.version=2
         txNew.vin[0].scriptSig = (CScript() << pindexPrev->nHeight+1) + COINBASE_FLAGS;
-        txNew.vout[0].scriptPubKey.SetDestination(pubkey.GetID());
-        txNew.vout[1].scriptPubKey.SetDestination(address.Get());
         assert(txNew.vin[0].scriptSig.size() <= 100);
 
-        //txNew.vout[0].SetEmpty();
-        //txNew.vout[1].SetEmpty();
+        txNew.vout[0].SetEmpty();
+        txNew.vout[1].SetEmpty();
     }
 
     // Add our coinbase tx as first transaction
@@ -370,9 +366,9 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
         if (fDebug && GetBoolArg("-printpriority"))
             printf("CreateNewBlock(): total size %"PRIu64"\n", nBlockSize);
 
-        if (fProofOfStake)
-            pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(nHeight, nFees)- devCoin;
-            pblock->vtx[0].vout[1].nValue = devCoin;
+        //if (fProofOfStake)
+        //    pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(nHeight, nFees)- devCoin;
+        //    pblock->vtx[0].vout[1].nValue = devCoin;
 
         if (!fProofOfStake)
             pblock->vtx[0].vout[0].nValue = GetProofOfWorkReward(nHeight, nFees)- devCoin;

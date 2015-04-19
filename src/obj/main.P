@@ -1,0 +1,24 @@
+obj/main.o: main.cpp alert.h uint256.h util.h netbase.h serialize.h \
+ allocators.h version.h clientversion.h compat.h checkpoints.h net.h \
+ mruset.h protocol.h addrman.h sync.h threadsafety.h db.h main.h bignum.h \
+ script.h keystore.h crypter.h key.h stealth.h scrypt.h txdb.h \
+ txdb-leveldb.h /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/db.h \
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/iterator.h \
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/slice.h \
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/status.h \
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/options.h \
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/write_batch.h \
+ init.h wallet.h ui_interface.h walletdb.h base58.h smessage.h lz4/lz4.h \
+ kernel.h
+main.cpp alert.h uint256.h util.h netbase.h serialize.h :
+ allocators.h version.h clientversion.h compat.h checkpoints.h net.h :
+ mruset.h protocol.h addrman.h sync.h threadsafety.h db.h main.h bignum.h :
+ script.h keystore.h crypter.h key.h stealth.h scrypt.h txdb.h :
+ txdb-leveldb.h /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/db.h :
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/iterator.h :
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/slice.h :
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/status.h :
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/options.h :
+ /Coins/Etrust/Etrust-POS/src/leveldb/include/leveldb/write_batch.h :
+ init.h wallet.h ui_interface.h walletdb.h base58.h smessage.h lz4/lz4.h :
+ kernel.h :
