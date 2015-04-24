@@ -25,7 +25,7 @@ class CInv;
 class CRequestTracker;
 class CNode;
 
-static const int LAST_POW_BLOCK = 20000;
+static const int LAST_POW_BLOCK = 25000;
 static const int LAST_FAIR_LAUNCH_BLOCK = 100;
 
 static const unsigned int MAX_BLOCK_SIZE = 1000000;
@@ -516,6 +516,7 @@ public:
     bool IsCoinBase() const
     {
         return (vin.size() == 1 && vin[0].prevout.IsNull() && vout.size() >= 1);
+
     }
 
     bool IsCoinStake() const

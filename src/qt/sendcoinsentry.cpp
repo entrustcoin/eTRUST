@@ -147,7 +147,7 @@ SendCoinsRecipient SendCoinsEntry::getValue()
         rv.typeInd = AddressTableModel::AT_Normal;
     
     rv.amount = ui->payAmount->value();
-    
+
     return rv;
 }
 

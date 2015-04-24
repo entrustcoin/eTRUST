@@ -67,7 +67,7 @@ struct MessageTableEntry
     }
 };
 
-/** Interface to Entrustcoin Secure Messaging from Qt view code. */
+/** Interface to Secure Messaging from Qt view code. */
 class MessageModel : public QAbstractTableModel
 {
     Q_OBJECT
